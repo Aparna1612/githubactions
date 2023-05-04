@@ -7,5 +7,6 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v1
       - name: Branch name
-        run: 'echo running on branch ${GITHUB_REF##*/}'
+        run: 'echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >>$GITHUB_OUTPUT'
+
      
